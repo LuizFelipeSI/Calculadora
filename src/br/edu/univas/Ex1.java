@@ -8,10 +8,10 @@ public class Ex1 {
         
         Scanner scan = new Scanner(System.in);
 
-        int n = 0;
+        int numero;
         float resultado = 0;
 
-        while (n < 2) {
+        while (true) {
 
             System.out.println("-------------------------");
             System.out.println("ESCOLHA UMA OPÇÃO:");
@@ -28,38 +28,36 @@ public class Ex1 {
                 break;
 
             }else {
-                if (n == 0) {
-                    System.out.println("digite dois números");
-                    float a = scan.nextFloat();
-                    float b = scan.nextFloat();
-                    if (opcao == 1) {
-                        resultado = adicao(a, b);
-                    } else if (opcao == 2) {
-                        resultado = subtracao(a, b);
-                    } else if (opcao == 3) {
-                        resultado = multiplicacao(a, b);
-                    } else {
-                        resultado = divisao(a, b);
-                    }
+                System.out.println("digite quantos números quer usar na operação:");
+                numero = scan.nextInt();
+                System.out.println("digite os números");
 
-                } else {
-                    System.out.println("digite um número");
-                    float b = scan.nextFloat();
+                for (int i = 0; i < numero; i++) {
+
+                    float a = scan.nextFloat();
                     if (opcao == 1) {
-                        resultado = adicao(resultado, b);
+                        resultado = adicao(resultado, a);
                     } else if (opcao == 2) {
-                        resultado = subtracao(resultado, b);
+                        resultado = subtracao(resultado, a);
                     } else if (opcao == 3) {
-                        resultado = multiplicacao(resultado , b);
+                        if (resultado == 0) {
+                            resultado = multiplicacao(1, a);
+                        } else {
+                            resultado = multiplicacao(resultado, a);
+                        }
                     } else {
-                        resultado = divisao(resultado, b);
+                        if (resultado == 0) {
+                            resultado = divisao(a*a, a);
+                        } else {
+                            resultado = divisao(resultado, a);
+                        }
                     }
                 }
             }
-
-            n = 1;
+            resultado = 0;
         }
     }
+
     
     public static float adicao(float a, float b) {
         float resultado = a+b;
