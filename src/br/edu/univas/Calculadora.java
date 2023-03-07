@@ -2,7 +2,7 @@ package br.edu.univas;
 
 import java.util.Scanner;
 
-public class Ex1 {
+public class Calculadora {
 
     public static void main(String []args) {
         
@@ -54,6 +54,7 @@ public class Ex1 {
                     }
                 }
             }
+            System.out.println(resultado);
             resultado = 0;
         }
     }
@@ -61,28 +62,24 @@ public class Ex1 {
     
     public static float adicao(float a, float b) {
         float resultado = a+b;
-        System.out.println(resultado);
         
         return resultado;
     }
 
     public static float subtracao(float a, float b) {
         float resultado = a-b;
-        System.out.println(resultado);
 
         return resultado;
     }
 
     public static float multiplicacao(float a, float b) {
         float resultado = a*b;
-        System.out.println(resultado);
 
         return resultado;
     }
 
     public static float divisao(float a, float b) {
         float resultado = a/b;
-        System.out.println(resultado);
 
         return resultado;
     }
